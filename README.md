@@ -42,7 +42,7 @@ Benchmark your conversational systems and AI pipelines against adversarial techn
 
 ## 4. Installation & Implementation Instructions
 
-### Clone & Execução
+### Clone & Run
 
 ```bash
 git clone https://github.com/TAVARDT-UK/owasp-llm-guardrails-template.git
@@ -50,25 +50,25 @@ cd owasp-llm-guardrails-template
 python examples/quickstart.py
 ```
 
-### Exemplo de Integração
+### Python Integration Example
 
 ```python
 from guardrails.validator import LLMGuardrail
 
 guard = LLMGuardrail()
 
-# 1. Validação de Ingress (Input Guardrail)
+# 1. Ingress Validation (Input Guardrail)
 is_safe, error = guard.validate_input(user_input)
 if not is_safe:
-    raise ValueError(f"Blocked input: {error}")
+    raise ValueError(f"Input blocked due to suspicious adversarial pattern: {error}")
 
-# 2. Injeção de Canary no Prompt de Sistema
+# 2. Inject Canary Token into System Prompt
 hardened_system_prompt = guard.get_canary_injection_prompt(system_prompt)
 
-# 3. Validação de Egress (Output Guardrail)
+# 3. Egress Validation (Output Guardrail)
 is_valid, leak_error = guard.validate_output(completion)
 if not is_valid:
-    raise SecurityError("System prompt leak detected!")
+    raise SecurityError("Critical alert: System prompt leak detected via canary token!")
 ```
 
 ---
@@ -84,5 +84,5 @@ For organisations requiring comprehensive AI security audits, automated conversa
 
 ## Licence
 
-Distribuído sob a licença de código aberto MIT. Consulte o arquivo [`LICENSE`](LICENSE) para mais detalhes.  
+Distributed under the open-source MIT Licence. Refer to the [`LICENSE`](LICENSE) file for complete details.  
 Copyright (c) 2026 TAVARDT UK.
