@@ -7,7 +7,7 @@
 
 Production-grade open source middleware and defence blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, aligned with UK NCSC AI Security Guidelines and UK GDPR.
 
-Engineered and maintained by the AI safety and security engineering practice at **TAVARDT UK**.
+Engineered and maintained by the AI safety and security engineering practice at **TAVARDT**.
 
 ***
 
@@ -35,7 +35,7 @@ Foundation models do not intrinsically distinguish privileged system guidelines 
 
 Benchmark your conversational systems and AI pipelines against adversarial techniques before releasing to production:
 
-* **AI Robustness Check:** **TAVARDT UK LLM Robustness Evaluator**
+* **AI Robustness Check:** **TAVARDT LLM Robustness Evaluator**
 * **Complete Diagnostic Platform:** **TAVARDT Tools UK**
 
 ***
@@ -77,7 +77,7 @@ if not is_valid:
 
 For organisations requiring comprehensive AI security audits, automated conversational agent safeguarding, or technical incident support:
 
-* **Corporate Portal:** **TAVARDT UK**
+* **Corporate Portal:** **TAVARDT**
 * **Technical Contact:** [Liaise with Engineering](https://ag.tavardt.com/uk/contact/)
 
 ***
@@ -85,4 +85,8 @@ For organisations requiring comprehensive AI security audits, automated conversa
 ## Licence
 
 Distributed under the open-source MIT Licence. Refer to the [`LICENSE`](LICENSE) file for complete details.  
-Copyright (c) 2026 TAVARDT.
+Copyright
+
+***
+
+© 2026 TAVARDT. All rights reserved.
