@@ -7,9 +7,9 @@
 
 Production-grade open source middleware and defence blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, aligned with UK NCSC AI Security Guidelines and UK GDPR.
 
-Engineered and maintained by the AI safety and security engineering practice at **[TAVARDT UK](https://ag.tavardt.com/uk/super-intelligence/)**.
+Engineered and maintained by the AI safety and security engineering practice at **TAVARDT UK**.
 
----
+***
 
 ## 1. AI Security Architecture Overview
 
@@ -18,27 +18,27 @@ This repository provides a modular, dependency-light security middleware deliver
 ### Essential Protection at the Application Boundary
 Foundation models do not intrinsically distinguish privileged system guidelines from untrusted user inputs. Lacking rigorous boundary enforcement, conversational agents and automated reasoning systems risk context override, proprietary IP disclosure, and arbitrary tool triggering.
 
----
+***
 
 ## 2. Threat Vectors Addressed (OWASP Top 10 for LLMs)
 
 | Defence Layer | Threat Vector Mitigated | Protection Mechanism |
-| :--- | :--- | :--- |
+| :- | :- | :- |
 | **Input Sanitiser** | Direct Prompt Injection & Jailbreaks | Pre-execution pattern detection intercepting contextual escape syntax (`ignore instructions`, adversarial roleplay). |
 | **Canary Token Verifier** | System Prompt Exfiltration | Detection of embedded canary tokens in responses to prevent internal prompt leaks. |
 | **RAG Boundary Guard** | Indirect Prompt Injection | Isolation of untrusted external content retrieved from document indexes and vector stores. |
 | **Structured Output Filter** | Unauthorised Tool Dispatch | Schema validation for function calls and MCP tools prior to execution. |
 
----
+***
 
 ## 3. Pre-Deployment AI Robustness Audit
 
 Benchmark your conversational systems and AI pipelines against adversarial techniques before releasing to production:
 
-* **AI Robustness Check:** [TAVARDT UK LLM Robustness Evaluator](https://tools.tavardt.com/uk/llm-robustness-evaluator/)
-* **Complete Diagnostic Platform:** [TAVARDT Tools UK](https://tools.tavardt.com/uk/)
+* **AI Robustness Check:** **TAVARDT UK LLM Robustness Evaluator**
+* **Complete Diagnostic Platform:** **TAVARDT Tools UK**
 
----
+***
 
 ## 4. Installation & Implementation Instructions
 
@@ -71,16 +71,16 @@ if not is_valid:
     raise SecurityError("Critical alert: System prompt leak detected via canary token!")
 ```
 
----
+***
 
 ## 5. AI Security Advisory & Enterprise Agent Engineering
 
 For organisations requiring comprehensive AI security audits, automated conversational agent safeguarding, or technical incident support:
 
-* **Corporate Portal:** [TAVARDT UK](https://ag.tavardt.com/uk/super-intelligence/)
+* **Corporate Portal:** **TAVARDT UK**
 * **Technical Contact:** [Liaise with Engineering](https://ag.tavardt.com/uk/contact/)
 
----
+***
 
 ## Licence
 
