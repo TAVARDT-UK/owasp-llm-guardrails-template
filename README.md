@@ -4,6 +4,7 @@
 [![OWASP LLM01](https://img.shields.io/badge/OWASP-LLM01%20Hardened-ff0055.svg)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
 [![Language](https://img.shields.io/badge/Language-English%20(UK)-green.svg)](README.md)
 [![AI Diagnostics](https://img.shields.io/badge/TAVARDT-AI%20Evaluator-5b3cf5.svg)](https://tools.tavardt.com/uk/llm-robustness-evaluator/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Production-grade open source middleware and defence blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, aligned with UK NCSC AI Security Guidelines and UK GDPR.
 
@@ -79,6 +80,15 @@ For organisations requiring comprehensive AI security audits, automated conversa
 
 * **Corporate Portal:** **TAVARDT**
 * **Technical Contact:** [Liaise with Engineering](https://ag.tavardt.com/uk/contact/)
+
+***
+
+## Governance and Sovereignty
+
+* **Sovereign Unit**: **TAVARDT United Kingdom** (`TAVARDT-UK`)
+* **Core Standards**: [00-core Governance](https://github.com/TAVARDT-UK/00-core)
+* **Diagnostic Portal**: **TAVARDT UK Diagnostic Suite**
+* **Enterprise Security**: [TAVARDT UK Cybersecurity](https://ag.tavardt.com/uk/cybersecurity/)
 
 ***
 
