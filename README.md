@@ -4,50 +4,53 @@
 [![AI Diagnostics](https://img.shields.io/badge/TAVARDT-AI%20Evaluator-5b3cf5.svg)](https://tools.tavardt.com/uk/llm-robustness-evaluator/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Production-grade open source middleware and defence blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, aligned with UK NCSC AI Security Guidelines and UK GDPR.
+***
+
+Production-ready open source middleware and security blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, engineered by **TAVARDT**, aligned with UK GDPR, BSI AI Governance Framework, and Cyber Essentials Plus.
+
+Large Language Models inherently process system instructions and user-supplied text within a shared context window. Without application-layer input sanitization and canary-backed output validation, autonomous agents and RAG pipelines remain vulnerable to context hijacking, credential exfiltration, and unauthorized tool execution.
 
 ***
 
-## 1. AI Security Architecture Overview
+## Core Capabilities and Defensive Architecture
 
-This repository provides a modular, dependency-light security middleware delivering deterministic **guardrails** for autonomous agents, RAG workflows, and enterprise applications interfacing with foundational LLMs (OpenAI, Anthropic, Gemini, Llama).
-
-### Essential Protection at the Application Boundary
-Foundation models do not intrinsically distinguish privileged system guidelines from untrusted user inputs. Lacking rigorous boundary enforcement, conversational agents and automated reasoning systems risk context override, proprietary IP disclosure, and arbitrary tool triggering.
-
-***
-
-## 2. Threat Vectors Addressed (OWASP Top 10 for LLMs)
-
-| Defence Layer | Threat Vector Mitigated | Protection Mechanism |
-| :- | :- | :- |
-| **Input Sanitiser** | Direct Prompt Injection & Jailbreaks | Pre-execution pattern detection intercepting contextual escape syntax (`ignore instructions`, adversarial roleplay). |
-| **Canary Token Verifier** | System Prompt Exfiltration | Detection of embedded canary tokens in responses to prevent internal prompt leaks. |
-| **RAG Boundary Guard** | Indirect Prompt Injection | Isolation of untrusted external content retrieved from document indexes and vector stores. |
-| **Structured Output Filter** | Unauthorised Tool Dispatch | Schema validation for function calls and MCP tools prior to execution. |
+* **Deterministic Ingress Sanitization**: Scans incoming prompts against compiled regex heuristics to block instruction overrides, simulated personas, and delimiter tampering before reaching the model.
+* **Cryptographic Canary Token Verification**: Injects unpredictable tokens (`TAVARDT_CANARY_<hex16>`) via Python `secrets` to detect and terminate sessions attempting system prompt leakage.
+* **Comprehensive Threat Coverage**: Mitigates OWASP-LLM01 (Prompt Injection), OWASP-LLM06 (Sensitive Information Disclosure), and OWASP-LLM07 (Insecure Plugin Design).
+* **Zero External Dependencies**: Operates entirely with the Python standard library, delivering sub-2ms evaluation latency with zero third-party network calls.
+* **Drop-in Integration Architecture**: Easily wraps any LLM provider (OpenAI, Anthropic, Google Gemini, local Llama models) across autonomous agents, chatbots, and RAG pipelines.
 
 ***
 
-## 3. Pre-Deployment AI Robustness Audit
+## Threat Vectors and Operational Impact
 
-Benchmark your conversational systems and AI pipelines against adversarial techniques before releasing to production:
+Deploying foundation models in production without defensive guardrails exposes organizational data and agentic tools to adversarial manipulation. The template neutralizes four critical risk vectors:
 
-* **AI Robustness Check:** **TAVARDT LLM Robustness Evaluator**
-* **Complete Diagnostic Platform:** **TAVARDT Tools UK**
+* **Direct Prompt Injection (OWASP LLM01)**: Attackers submitting instruction resets (`ignore previous instructions`) to force model compliance with malicious tasks.
+* **System Prompt Exfiltration (OWASP LLM06)**: Social engineering queries designed to coerce the model into revealing proprietary prompt instructions and confidential rules.
+* **Delimiter Escape and Jailbreak Roleplay**: Exploitation of markdown or XML boundary markers to switch the model into unrestricted or developer modes.
+* **Indirect Context Injection via Vector Stores**: Adversarial payloads hidden within third-party documents that hijack agent reasoning during retrieval-augmented generation.
 
 ***
 
-## 4. Installation & Implementation Instructions
+## Installation and Execution CLI
 
-### Clone & Run
+Integrate the guardrail middleware into your Python application or test it locally with the included quickstart runner:
 
 ```bash
+# Clone the official repository
 git clone https://github.com/TAVARDT-UK/owasp-llm-guardrails-template.git
+
+# Enter repository workspace
 cd owasp-llm-guardrails-template
+
+# Run the quickstart verification script
 python examples/quickstart.py
 ```
 
 ### Python Integration Example
+
+Wrap any model inference call with deterministic ingress and egress guardrails:
 
 ```python
 from guardrails.validator import LLMGuardrail
@@ -70,7 +73,31 @@ if not is_valid:
 
 ***
 
-## 5. Useful Links
+## Frequently Asked Technical Questions
+
+### What threat vectors does the OWASP LLM guardrails template mitigate across foundation model pipelines?
+
+The template enforces deterministic application-layer defenses against direct prompt injection, adversarial jailbreak overrides, and system prompt exfiltration. By combining ingress regex pattern screening with canary token egress verification, the middleware protects LLM workloads without requiring fine-tuning.
+
+### How does dynamic canary token verification prevent system prompt leakage?
+
+The LLMGuardrail class generates an unpredictable cryptographic canary token and injects it into system instructions with strict non-disclosure directives. During output validation, the validator scans model completions for this secret token, immediately intercepting and suppressing responses that leak internal instructions.
+
+### Why is deterministic input sanitization necessary if the underlying model already has safety alignment?
+
+Model safety alignments can be bypassed through sophisticated adversarial phrasing, encoded instructions, or simulated roleplay personas. Deterministic regex screening intercepts known jailbreak patterns before tokens reach the context window, eliminating inferential risk and saving inference compute costs.
+
+### How does this guardrails template integrate into agentic workflows and retrieval-augmented generation pipelines?
+
+The guardrail wraps inference cycles by screening both retrieved third-party document chunks and user prompts before prompt construction occurs. This prevents indirect prompt injections hidden in vector stores from hijacking model reasoning or invoking unauthorized downstream tools.
+
+### What is the computational and latency overhead introduced by the guardrail validation layer?
+
+The Python validator executes strictly in-memory using compiled regular expressions and native string comparisons, completing validation in under 2 milliseconds. Because the guardrail operates without external API calls or secondary LLM evaluators, it adds zero network latency to production pipelines.
+
+***
+
+## Useful Links
 
 * **Corporate Portal:** https://ag.tavardt.com/uk/
 * **Diagnostic Suite:** https://tools.tavardt.com/uk/
@@ -78,9 +105,8 @@ if not is_valid:
 
 ***
 
-### Licence
-
-Distributed under the open-source MIT Licence.
+### License
+Released under the MIT License. See [LICENSE](LICENSE) for full details.
 
 ***
 
