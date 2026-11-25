@@ -91,10 +91,9 @@ For organisations requiring comprehensive AI security audits, automated conversa
 
 ***
 
-## Licence
+### Licence
 
-Distributed under the open-source MIT Licence. Refer to the [`LICENSE`](LICENSE) file for complete details.  
-Copyright
+Distributed under the open-source MIT Licence. Refer to the [`LICENSE`](LICENSE) file for complete details.
 
 ***
 
