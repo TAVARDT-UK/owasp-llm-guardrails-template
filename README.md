@@ -1,14 +1,10 @@
 # OWASP LLM01 Guardrails Template & AI Security Blueprint
 
-[![Licence MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![OWASP LLM01](https://img.shields.io/badge/OWASP-LLM01%20Hardened-ff0055.svg)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-[![Language](https://img.shields.io/badge/Language-English%20(UK)-green.svg)](README.md)
 [![AI Diagnostics](https://img.shields.io/badge/TAVARDT-AI%20Evaluator-5b3cf5.svg)](https://tools.tavardt.com/uk/llm-robustness-evaluator/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Production-grade open source middleware and defence blueprint for mitigating Prompt Injection (OWASP LLM01), system prompt extraction, and adversarial jailbreaks, aligned with UK NCSC AI Security Guidelines and UK GDPR.
-
-Engineered and maintained by the AI safety and security engineering practice at **TAVARDT**.
 
 ***
 
@@ -74,16 +70,7 @@ if not is_valid:
 
 ***
 
-## 5. AI Security Advisory & Enterprise Agent Engineering
-
-For organisations requiring comprehensive AI security audits, automated conversational agent safeguarding, or technical incident support:
-
-* **Corporate Portal:** **TAVARDT**
-* **Technical Contact:** [Liaise with Engineering](https://ag.tavardt.com/uk/contact/)
-
-***
-
-## Useful Links
+## 5. Useful Links
 
 * **Corporate Portal:** https://ag.tavardt.com/uk/
 * **Diagnostic Suite:** https://tools.tavardt.com/uk/
@@ -93,7 +80,7 @@ For organisations requiring comprehensive AI security audits, automated conversa
 
 ### Licence
 
-Distributed under the open-source MIT Licence. Refer to the [`LICENSE`](LICENSE) file for complete details.
+Distributed under the open-source MIT Licence.
 
 ***
 
